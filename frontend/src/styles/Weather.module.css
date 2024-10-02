@@ -1,11 +1,10 @@
 .weatherContainer {
-  max-width: 400px;
+  max-width: 600px;
   margin: 2rem auto;
-  padding: 1.5rem;
+  padding: 2rem;
   background-color: var(--bg-color);
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .weatherTitle {
@@ -15,19 +14,65 @@
   text-align: center;
 }
 
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.weatherIcon {
+  width: 100px;
+  height: 100px;
+}
+
+.temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 1rem 0;
+}
+
+.condition {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+
 .weatherDetails {
-  background-color: var(--bg-color);
-  border-radius: 8px;
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
 .weatherDetails p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-color);
+  margin: 0.5rem 0;
 }
 
-.weatherDetails strong {
-  font-weight: bold;
-  color: var(--button-bg);
+.loading,
+.error {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+@media (max-width: 600px) {
+  .weatherContainer {
+    padding: 1rem;
+  }
+
+  .temperature {
+    font-size: 2.5rem;
+  }
+
+  .weatherDetails {
+    grid-template-columns: 1fr;
+  }
 }
