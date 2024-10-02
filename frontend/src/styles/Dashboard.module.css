@@ -1,37 +1,308 @@
 .dashboardContainer {
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
   font-family: Arial, sans-serif;
 }
 
 .dashboardTitle {
-  font-size: 2.5rem;
-  color: #2c3e50;
+  font-size: 2rem;
+  color: var(--text-color);
   margin-bottom: 2rem;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.chartContainer {
-  background-color: #ffffff;
-  border-radius: 8px;
+.todoList,
+.pomodoro,
+.clickGame {
+  background-color: var(--bg-secondary);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin-top: 2rem;
+  transition: box-shadow 0.3s ease;
 }
 
-@media (max-width: 768px) {
+.todoList:hover,
+.pomodoro:hover,
+.clickGame:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.todoList h3,
+.pomodoro h3,
+.clickGame h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.todoList form {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.todoList input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px 0 0 4px;
+  transition: border-color 0.3s ease;
+}
+
+.todoList input:focus {
+  outline: none;
+  border-color: var(--button-bg);
+}
+
+.todoList button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todoList button:hover,
+.todoList button:focus {
+  background-color: var(--button-hover-bg);
+}
+
+.todoList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todoList li {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.todoList li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.todoList li.completed {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.pomodoroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  perspective: 1000px;
+}
+
+.timerDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.timerDisplay:hover {
+  transform: scale(1.05);
+}
+
+.time {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.time,
+.finalScore,
+.highScore,
+.motivationalMessage {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.editButton {
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pomodoroControls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.controlButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controlButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hourglass {
+  width: 120px;
+  height: 160px;
+  color: var(--text-color);
+  transition: all 0.5s ease;
+}
+
+.hourglass path {
+  transition: all 0.5s ease;
+}
+
+.sandParticles circle {
+  animation: fallingSand 1s infinite;
+}
+
+@keyframes fallingSand {
+  0% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  80% {
+    transform: translateY(60px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+}
+
+input[type='number'] {
+  font-size: 2rem;
+  width: 4ch;
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.25rem;
+}
+
+.gameButton {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  display: block;
+  width: 100%;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gameButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gameButton:active {
+  transform: scale(0.98);
+}
+
+.gameButton:focus,
+.editButton:focus,
+.controlButton:focus {
+  outline: 2px solid var(--button-bg);
+  outline-offset: 2px;
+}
+
+.gameResult {
+  text-align: center;
+  margin-top: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.finalScore,
+.highScore {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.motivationalMessage {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--highlight-color);
+  margin: 1rem 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
   .dashboardContainer {
     padding: 1rem;
   }
 
   .dashboardTitle {
+    font-size: 1.5rem;
+  }
+
+  .time {
     font-size: 2rem;
   }
 
-  .chartContainer {
-    padding: 1rem;
+  .pomodoroContent {
+    flex-direction: column;
+  }
+
+  .hourglass {
+    margin-bottom: 1rem;
+  }
+
+  .gameButton {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
   }
 }
