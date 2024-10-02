@@ -1,0 +1,43 @@
+.header {
+  background-color: #282c34;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navLinks li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: #61dafb;
+}
+
+.themeToggle {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.themeToggle:hover {
+  background-color: #61dafb;
+}

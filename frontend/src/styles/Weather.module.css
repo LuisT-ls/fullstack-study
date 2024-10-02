@@ -1,0 +1,27 @@
+.weatherContainer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weatherTitle {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.weatherDetails {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: left;
+}
+
+.weatherDetails p {
+  font-size: 1.2rem;
+}

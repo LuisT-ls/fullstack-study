@@ -1,0 +1,32 @@
+.homeContainer {
+  text-align: center;
+  padding: 20px;
+}
+
+.homeTitle {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.homeDescription {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.weatherInfo {
+  background-color: #f4f4f9;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.weatherInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.weatherInfo p {
+  font-size: 1.2rem;
+  color: #007bff;
+}
