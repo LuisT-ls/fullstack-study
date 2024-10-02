@@ -1,24 +1,37 @@
 .dashboardContainer {
-  padding: 30px;
-  text-align: center;
-  background-color: #f4f4f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
 }
 
 .dashboardTitle {
-  font-size: 2.2rem;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .chartContainer {
-  width: 80%;
-  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: 2rem;
 }
 
-canvas {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+@media (max-width: 768px) {
+  .dashboardContainer {
+    padding: 1rem;
+  }
+
+  .dashboardTitle {
+    font-size: 2rem;
+  }
+
+  .chartContainer {
+    padding: 1rem;
+  }
 }

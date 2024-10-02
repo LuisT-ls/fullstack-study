@@ -1,43 +1,115 @@
 .header {
-  background-color: #282c34;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .navLinks {
-  list-style: none;
   display: flex;
-  gap: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.navLinks li a {
-  color: white;
+.navLinks li {
+  margin-left: 2rem;
+}
+
+.navLinks a {
+  color: var(--header-text);
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
 }
 
-.navLinks li a:hover {
-  color: #61dafb;
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--button-bg);
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.navLinks a:hover {
+  color: var(--button-bg);
 }
 
 .themeToggle {
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  padding: 8px 12px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .themeToggle:hover {
-  background-color: #61dafb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.themeToggle:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .navLinks li {
+    margin: 0.5rem 0;
+  }
+
+  .themeToggle {
+    width: 100%;
+    max-width: 200px;
+  }
 }
